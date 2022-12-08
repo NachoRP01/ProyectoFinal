@@ -236,6 +236,50 @@ $palette: (
       background-color: nth($rango-color, $index-color+1);
     }
   }
-}
+};
+@each $color in map-keys($palette) {
+  $rango-color: map-get($palette, $color);
 
-;
+  @for $index-color from 0 to length($rango-color) {
+    .g--color-#{$color}-#{$index-color+1} {
+     color: nth($rango-color, $index-color+1);
+    }
+  }
+};
+.c-button {
+  cursor: pointer;
+  border: 1px solid #0082E6;
+  border-radius: 15px;
+
+  background-color: #0082E6;
+  color: white;
+  padding:14px;
+  width: 100% ;
+  &--secudary {
+      background-color: white;
+      color: #0082E6;
+  }
+
+  &--tertiary {
+      background-color: transparent;
+      color: #FD6B1C;
+      border: none;
+  }
+  &--tertiary-alt{
+      background-color: transparent;
+      color:#FD6B1C;
+      border: none;
+  }
+
+  &--alternative {
+      margin-left: 0px;
+      background-color: #FD6B1C;
+      border-color: #FD6B1C;
+      color: white;
+  }
+  &--dangerous{
+      background-color: #c53030;
+      border-color: #c53030;
+      color: white;
+  }
+}
