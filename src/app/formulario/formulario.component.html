@@ -1,0 +1,518 @@
+<div class="c-body">
+    <div class="l-page l-flex l-flex--direction-column">
+        <div class="l-page__body">
+            <mat-horizontal-stepper #stepper [linear]="true" class="g--padding-45">
+                <mat-step label="Ficha usuario">
+                    <div class="c-table g--padding-25">
+                        <div class="c-table__header g--margin-t-30 g--padding-30">
+                            <h2>Ficha del usuario</h2>
+                        </div>
+                        <div class="c-table__body g--margin-t-15">
+                            <div class="c-section">
+                                <div class="l-flex l-flex--space-around">
+                                    <p-table #dt [value]="listaCarga.Ramas" responsiveLayout="scroll" class=" c-table">
+                                        <ng-template pTemplate="header">
+                                            <tr>
+                                                <th>Grupo</th>
+                                                <th>Sociedad</th>
+                                                <th>Departamento</th>
+                                            </tr>
+                                        </ng-template>
+                                        <ng-template pTemplate="body" let-product>
+                                            <tr>
+                                                <!-- <td>{{obtenerEmpresas(product.Grupo.Nombre)}}</td> -->
+                                                <td>{{product.Grupo.Nombre}}</td>
+                                                <td>{{product.Sociedad.Nombre}}</td>
+                                                <td *ngIf="product.Departamento!=null">
+                                                    {{product.Departamento.Nombre}}
+                                                </td>
+                                            </tr>
+                                        </ng-template>
+                                    </p-table>
+                                </div>
+                                <div class="l-flex l-flex--space-around g--margin-t-30">
+                                    <div class="c-column l-flex l-flex--direction-column">
+                                        <div class="form-group g--margin-t-30 p-float-label">
+                                            <span class="p-float-label">
+                                                <input id="nombre" class="form-control"
+                                                    [(ngModel)]="nuevoProveedor.Nombre" type="text" pInputText>
+                                                <label for="nombre" required>Nombre *</label></span>
+                                        </div>
+                                        <div class="form-group g--margin-t-30 p-float-label">
+                                            <span class="p-float-label">
+                                                <input id="apellidos" class="form-control"
+                                                    [(ngModel)]="nuevoProveedor.Apellidos" name="apellido" type="text"
+                                                    pInputText>
+                                                <label for="apellido">Apellido(S) *</label></span>
+                                        </div>
+                                        <div class="form-group g--margin-t-30 p-float-label">
+                                            <p-dropdown inputId="dropdown" [options]="obtenerEnumeradoValue('Genero')"
+                                                placeholder="Género" [(ngModel)]="nuevoProveedor.Genero"
+                                                optionLabel="Nombre" optionValue="Id">
+                                            </p-dropdown>
+                                            <label for="dropdown"></label>
+                                        </div>
+
+                                        <div class="form-group g--margin-t-30 p-float-label">
+                                            <span class="p-float-label">
+                                                <input id="telefono" type="text" class="form-control"
+                                                    [(ngModel)]="nuevoProveedor.Telefono" name="telefono" pInputText>
+                                                <label for="telefono">Telefono *</label></span>
+                                        </div>
+                                        <div class="form-group g--margin-t-30 p-float-label">
+                                            <input id="email" class="form-control" type="text"
+                                                [(ngModel)]="listaCarga.Email" name="email" pInputText>
+                                            <label for="email">Email *</label>
+                                        </div>
+                                    </div>
+                                    <div class="c-column l-flex l-flex--direction-column">
+
+                                        <div class="form-group g--margin-t-30 p-float-label">
+                                            <span class="p-float-label">
+                                                <input id="fechaNacimiento" class="form-control"
+                                                    [(ngModel)]="nuevoProveedor.FechaNacimiento" name="fechaNacimiento"
+                                                    type="text" pInputText>
+                                                <label for="fechaNacimiento">Fecha de nacimiento</label></span>
+
+                                        </div>
+                                        <div class="form-group g--margin-t-30 p-float-label">
+                                            <span class="p-float-label">
+                                                <input id="preFijo" class="form-control" type="text"
+                                                    [(ngModel)]="nuevoProveedor.PreFijo" name="preFijo" pInputText>
+                                                <label for="preFijo">PRE Fijo</label></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="c-section g--margin-t-30">
+                                <hr class="g--back-gradient g--redondeado">
+                                <div class="c-section__title g--margin-t-30">
+                                    <h4>Documentos identificación de viajero *</h4>
+                                </div>
+                                <div class="form-group g--margin-t-15">
+                                    <div class="g--margin-r-15 g--margin-t-15">Extranjero</div>
+                                    <div class="l-flex  g--margin-t-15">
+                                        <label for="extranjeroNo" class="g--margin-r-15">No</label>
+                                        <p-inputSwitch [(ngModel)]="documentoNuevo.Extranjero">
+                                        </p-inputSwitch>
+                                        <label for="extranjeroSi" class="g--margin-l-15">Si</label>
+                                    </div>
+                                </div>
+                                <div class="l-flex l-flex--wrap g--margin-t-15">
+                                    <div class="form-group g--margin-t-30 g--margin-r-30 p-float-label">
+                                        <span class="p-float-label">
+                                            <input id="fechaCaducidad" class="form-control"
+                                                [(ngModel)]="documentoNuevo.TipoDocumento" name="fechaCaducidad"
+                                                type="text" pInputText>
+                                            <label for="fechaCaducidad">Tipo de documento</label></span>
+                                    </div>
+                                    <div class="form-group g--margin-t-30 g--margin-r-30 p-float-label">
+                                        <span class="p-float-label">
+                                            <input id="numDocumento" class="form-control"
+                                                [(ngModel)]="documentoNuevo.NumDocumento" name="numDocumento"
+                                                type="text" pInputText>
+                                            <label for="numDocumento">Número de documento</label></span>
+                                    </div>
+                                    <div class="form-group  g--margin-t-30 g--margin-r-30 p-float-label">
+                                        <span class="p-float-label">
+                                            <input id="paisExpedicion" class="form-control"
+                                                [(ngModel)]="documentoNuevo.PaisExpedicion" name="paisExpedicion"
+                                                type="text" pInputText>
+                                            <label for="paisExpedicion">Pais de expedicion</label></span>
+                                    </div>
+                                    <div class="form-group g--margin-t-30 g--margin-r-30 p-float-label">
+                                        <span class="p-float-label">
+                                            <input id="FechaExpedicion" class="form-control"
+                                                [(ngModel)]="documentoNuevo.FechaExpedicion" name="FechaExpedicion"
+                                                type="text" pInputText>
+                                            <label for="FechaExpedicion">Fecha de expedicion</label></span>
+                                    </div>
+                                    <div class="form-group g--margin-t-30 g--margin-r-30 p-float-label">
+                                        <span class="p-float-label">
+                                            <input id="fechaCaducidad" class="form-control"
+                                                [(ngModel)]="documentoNuevo.FechaCaducidad" name="fechaCaducidad"
+                                                type="text" pInputText>
+                                            <label for="fechaCaducidad">Fecha de caducidad</label></span>
+                                    </div>
+
+                                </div>
+                                <div class="g--margin-t-30">
+                                    <button class="btn btn-success" (click)="crearDocumento()">Añadir
+                                        documento</button>
+                                </div>
+                            </div>
+                            <div class="c-section">
+                                <div class="c-section__body g--margin-t-30 c-table">
+                                    <p-table [value]="nuevoProveedor.Documento" responsiveLayout="scroll">
+                                        <ng-template pTemplate="header">
+                                            <tr>
+                                                <th>Extranjero</th>
+                                                <th>Tipo de documento</th>
+                                                <th>Num documento</th>
+                                                <th>Pais de expedicion</th>
+                                                <th>Fecha de expedicion</th>
+                                                <th>Fecha de caducidad</th>
+                                                <th>Borrar</th>
+                                            </tr>
+                                        </ng-template>
+                                        <ng-template pTemplate="body" let-product>
+                                            <tr>
+                                                <td>{{nombreExtranjero(product.Extranjero)}}</td>
+                                                <td>{{product.TipoDocumento}}</td>
+                                                <td>{{product.NumDocumento}}</td>
+                                                <td>{{product.PaisExpedicion}}</td>
+                                                <td>{{product.FechaExpedicion}}</td>
+                                                <td>{{product.FechaCaducidad}}</td>
+                                                <td>
+                                                    <div class="celda-container l-flex">
+                                                        <div class="pi pi-times celda-container__icono-borrar celda-container__cursor-pointer "
+                                                            (click)="eliminar(product.NumDocumento)">
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </ng-template>
+                                    </p-table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="g--margin-t-30 l-flex">
+                        <div>
+                            <button matStepperNext type="button" class="btn btn-primary">Next</button>
+                        </div>
+                    </div>
+                </mat-step>
+                <mat-step label="Perfil">
+                    <div class="c-table g--padding-25">
+                        <div clsas="c-card__title">
+                            <h2>Perfil del viajero</h2>
+                        </div>
+                        <div class="c-card__body">
+                            <div class="l-flex l-flex--wrap l-flex--space-between ">
+                                <div class="c-section p-fluid">
+                                    <div class="l-flex">
+                                        <div class="form-group l-flex l-flex--direction-column">
+                                            <div class="">
+                                                <div class="l-flex">
+                                                    <b>Alergias</b>
+                                                </div>
+                                                <div class="g--margin-t-15 l-flex">
+                                                    <div class="g--margin-r-15 l-flex">
+                                                        <label class="g--margin-r-15" for="alergiaNo">No</label>
+                                                        <p-inputSwitch
+                                                            [(ngModel)]="nuevoProveedor.Perfil.Alergias.TieneAlergias">
+                                                        </p-inputSwitch>
+                                                        <label for="alergiaSi" class="g--margin-l-15">Si</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="g--margin-t-15">
+                                                <div class="l-flex">
+                                                    <b>Fumador</b>
+                                                </div>
+                                                <div class="l-flex g--margin-t-15">
+                                                    <div class="g--margin-r-15 l-flex">
+                                                        <label for="fumadorNo" class="g--margin-r-15">No</label>
+                                                        <p-inputSwitch [(ngModel)]="nuevoProveedor.Perfil.Fumador">
+                                                        </p-inputSwitch>
+                                                        <label for="fumadorSi" class="g--margin-l-15">Si</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div *ngIf="nuevoProveedor.Perfil.Alergias.TieneAlergias == true "
+                                            class="form-group g--margin-t-30 g--margin-l-30">
+                                            <!-- DESPLEGABLE -->
+                                            <label for="alergiaString">Si has pulsado a que si, indique cual</label>
+                                            <div class="g--width-300-px g--margin-t-15">
+                                                <p-multiSelect inputId="dropdown"
+                                                    [options]="obtenerEnumeradoValue('Alergias')" placeholder="Alergías"
+                                                    [(ngModel)]="nuevoProveedor.Perfil.Alergias.ListaAlergias"
+                                                    optionLabel="Nombre" optionValue="Id"
+                                                    [selectedItemsLabel]="'{0} opciones seleccionadas'"
+                                                    class="g--width-100">
+                                                </p-multiSelect>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="g--margin-t-30">
+                                        OBSERVACIONES
+                                        <input type="text" class="form-control g--margin-t-15" id="otrasAlergias"
+                                            [(ngModel)]="nuevoProveedor.Perfil.Alergias.Observaciones"
+                                            name="OBSERVACIONES">
+                                    </div>
+                                </div>
+                                <div class="c-section g--margin-t-15">
+                                    <div classs="c-section__header">
+                                        <b>OPCION ALIMENTACIÓN</b>
+                                    </div>
+                                    <div class="c-section__body">
+                                        <div class="l-flex g--margin-t-15">
+                                            <div class="l-flex l-flex--direction-column ">
+                                                <div *ngFor="let opcion of obtenerEnumeradoValue('OpcionesAlimentacion')"
+                                                    class="l-flex l-flex--space-between g--margin-t-15">
+                                                    <div class="g--margin-r-15">
+                                                        {{opcion.Nombre}}
+                                                    </div>
+                                                    <p-checkbox class="g--margin-r-15"
+                                                        name="{{opcion.Nombre}}" [value]='opcion.Id'
+                                                        [(ngModel)]="nuevoProveedor.Perfil.OpcionesAlimentacion">
+                                                    </p-checkbox>
+                                                </div>
+                                            </div>
+                                            <div *ngIf="comprobarOtros()" class="form-group g--margin-l-30">
+                                                <!-- DESPLEGABLE -->
+                                                <div class="g--width-300-px">
+                                                    <p-multiSelect inputId="dropdown"
+                                                        [options]="obtenerEnumeradoValue('OpcionesAlimentacionVuelo')"
+                                                        placeholder="Opciones Alimentacion"
+                                                        [(ngModel)]="nuevoProveedor.Perfil.OpcionesAlimentacionAvion"
+                                                        optionLabel="Nombre" optionValue="Id"
+                                                        [selectedItemsLabel]="'{0} opciones seleccionadas'">
+                                                    </p-multiSelect>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-section g--margin-t-15">
+                                    <div class="c-section__header">
+                                        <b>NECESIDADES DE MOVILIDAD</b>
+                                    </div>
+                                    <div class="c-section__body">
+                                        <div class="l-flex">
+                                            <div class="l-flex l-flex--direction-column">
+                                                <div class=" l-flex  g--margin-t-15">
+                                                    <label for="fumadorNo" class="g--margin-r-15">No</label>
+                                                    <p-inputSwitch
+                                                        [(ngModel)]="nuevoProveedor.Perfil.NecesidadesMovilidad.TieneNecesidadesMovilidad">
+                                                    </p-inputSwitch>
+                                                    <label for="fumadorSi" class="g--margin-l-15">Si</label>
+                                                </div>
+                                                <div
+                                                    *ngIf="nuevoProveedor.Perfil.NecesidadesMovilidad.TieneNecesidadesMovilidad == true ">
+                                                    <div *ngFor="let opcion of obtenerEnumeradoValue('NecesidadesMovilidad')"
+                                                        class="l-flex l-flex--space-between  g--margin-t-15">
+                                                        <div class="g--margin-r-15">
+                                                            {{opcion.Nombre}}
+                                                        </div>
+                                                        <p-checkbox class="g--margin-r-15" name="{{opcion}}"
+                                                            [value]='opcion.Id'
+                                                            [(ngModel)]="nuevoProveedor.Perfil.NecesidadesMovilidad.TiposNecesidadesMovilidad">
+                                                        </p-checkbox>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="g--margin-t-15">
+                                            OBSERVACIONES
+                                            <input type="text" class="form-control g--margin-t-15" id="otrasAlergias"
+                                                [(ngModel)]="nuevoProveedor.Perfil.NecesidadesMovilidad.Observaciones"
+                                                name="OBSERVACIONES">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="g--margin-t-30 l-flex">
+                        <div class="g--margin-r-15">
+                            <button matStepperPrevious type="button" class="btn btn-primary">Back</button>
+                        </div>
+                        <button matStepperNext type="button" class="btn btn-primary"
+                            (click)="recopilarDatos()">Next</button>
+                    </div>
+                </mat-step>
+                <mat-step label="Preferencias">
+                    <div class="l-page__body l-flex l-flex--direction-column c-table g--padding-25">
+                        <div class="c-card">
+                            <div class="c-card__header">
+                                <h2>HOTEL</h2>
+                            </div>
+                            <div class="c-card__body l-flex l-flex--wrap g--margin-t-30">
+                                <div class="c-section">
+                                    <div class="c-section__header">
+                                        <b>PREFERENTE</b>
+                                    </div>
+                                    <div class=" c-section__body l-flex g--margin-t-30">
+                                        <div class="l-flex l-flex--direction-column">
+                                            <div *ngFor="let opcion of obtenerEnumeradoValue('RegimenesHotel')"
+                                                class="l-flex l-flex--space-between g--margin-t-15">
+                                                <div class="g--margin-r-15">
+                                                    {{opcion.Nombre}}
+                                                </div>
+                                                <p-radioButton class="g--margin-r-15" name="{{opcion.Nombre}}"
+                                                    [value]='opcion.Id'
+                                                    [(ngModel)]="nuevoProveedor.PreferenciasHotel.RegimenPreferente">
+                                                </p-radioButton>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-section">
+                                    <div class="c-section__header">
+                                        <b>IMPRESCINDIBLES</b>
+                                    </div>
+                                    <div class="c-section__body l-flex  g--margin-t-15">
+                                        <div class="l-flex l-flex--direction-column">
+                                            <div *ngFor="let opcion of obtenerEnumeradoValue('ImprescindiblesHotel')"
+                                                class="l-flex l-flex--space-between g--margin-t-15">
+                                                <div class="g--margin-r-15">
+                                                    {{opcion.Nombre}}
+                                                </div>
+                                                <p-checkbox class="g--margin-r-15" name="{{opcion.Nombre}}"
+                                                    [value]='opcion.Id'
+                                                    [(ngModel)]="nuevoProveedor.PreferenciasHotel.Imprescindibles">
+                                                </p-checkbox>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>              
+                                <div class="c-section g--margin-l-15 g--margin-t-15 ">
+                                    <div class="g--margin-t-15">
+                                        OBSERVACIONES
+                                        <input type="text" class="form-control g--margin-t-15" id="otrasAlergias"
+                                            [(ngModel)]="nuevoProveedor.PreferenciasHotel.Observaciones"
+                                            name="OBSERVACIONES">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="c-card g--margin-t-30 g--margin-r-15">
+                            <hr class="g--back-gradient g--redondeado">
+
+                            <div class="c-card__header">
+                                <h2>VUELO</h2>
+                            </div>
+                            <div class="c-card__body l-flex l-flex--wrap g--margin-t-30">
+                                <div class="c-section">
+                                    <div class="c-section__header">
+                                        <b>PREFERENCIAS EN ASIENTOS</b>
+                                    </div>
+                                    <div class="c-section__body g--margin-t-15">
+                                        <div class=" l-flex l-flex--direction-column">
+                                            <div class="l-flex l-flex--space-between g--margin-t-15">
+                                                <div class="g--margin-r-15">
+                                                    Número de fila del avión
+                                                </div>
+                                                <input type="number" maxlength="2" min="0" max="99" class="form-control"
+                                                    id="otrasAlergias"
+                                                    [(ngModel)]="nuevoProveedor.PreferenciasVuelo.ClaseHabitual"
+                                                    name="numeroAsientoPreferenciaVuelo">
+                                            </div>
+                                            <div class="l-flex l-flex--direction-column">
+                                                <div *ngFor="let opcion of obtenerEnumeradoValue('PreferenciaAsientosVuelo')"
+                                                    class="l-flex l-flex--space-between g--margin-t-15">
+                                                    <div class="g--margin-r-15">
+                                                        {{opcion.Nombre}}
+                                                    </div>
+                                                    <p-radioButton class="g--margin-r-15" name="{{opcion.Nombre}}"
+                                                        [value]='opcion.Id'
+                                                        [(ngModel)]="nuevoProveedor.PreferenciasVuelo.PreferenciasAsiento">
+                                                    </p-radioButton>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-section ">
+                                    <div class="g--margin-t-15">
+                                        OBSERVACIONES
+                                        <input type="text" class="form-control g--margin-t-15" id="otrasAlergias"
+                                            [(ngModel)]="nuevoProveedor.PreferenciasTren.Observaciones"
+                                            name="OBSERVACIONES">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="c-card g--margin-t-30 g--margin-r-15">
+                            <hr class="g--back-gradient g--redondeado">
+                            <div class="c-card__header">
+                                <h2>TREN</h2>
+                            </div>
+                            <div class="c-card__body l-flex l-flex--wrap g--margin-t-30">
+                                <div class="c-section">
+                                    <div class="c-section__header">
+                                        <b>PREFERENCIAS EN ASIENTOS</b>
+                                    </div>
+                                    <div class="c-section__body g--margin-t-15">
+                                        <div class="l-flex l-flex--direction-column">
+                                            <div class="l-flex l-flex--direction-column">
+                                                <div *ngFor="let opcion of obtenerEnumeradoValue('PreferenciaAsientosTren')"
+                                                    class="l-flex l-flex--space-between g--margin-t-15">
+                                                    <div class="g--margin-r-15">
+                                                        {{opcion.Nombre}}
+                                                    </div>
+                                                    <p-radioButton class="g--margin-r-15" name="{{opcion.Nombre}}"
+                                                        [value]='opcion.Id'
+                                                        [(ngModel)]="nuevoProveedor.PreferenciasTren.PreferenciasAsiento">
+                                                    </p-radioButton>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="c-subsection">
+                                            <div class="c-subsection__header">
+                                                <div class="g--margin-t-30 g--margin-r-15">
+                                                    <b>Sentido marcha :</b>
+                                                </div>
+                                            </div>
+                                            <div class="c-subsection__body l-flex">
+                                                <div class="l-flex l-flex--space-between g--margin-t-15">
+                                                    <div *ngFor="let opcion of obtenerEnumeradoValue('SentidoMarchaTren')"
+                                                        class="l-flex l-flex--space-between g--margin-t-15">
+                                                        <div class="g--margin-r-15">
+                                                            {{opcion.Nombre}}
+                                                        </div>
+                                                        <p-radioButton class="g--margin-r-15" name="{{opcion.Nombre}}"
+                                                            [value]='opcion.Id'
+                                                            [(ngModel)]="nuevoProveedor.PreferenciasTren.SentidoMarcha">
+                                                        </p-radioButton>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-section g--margin-l-15">
+                                    <div class="g--margin-t-15">
+                                        OBSERVACIONES
+                                        <input type="text" class="form-control g--margin-t-15" id="otrasAlergias"
+                                            [(ngModel)]="nuevoProveedor.PreferenciasRentACar.Observaciones"
+                                            name="OBSERVACIONES">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="g--margin-t-30 l-flex">
+                        <div class="g--margin-r-15">
+                            <button matStepperPrevious class="g--margin-r-15" type="button"
+                                class="btn btn-primary">Back</button>
+                        </div>
+                        <div>
+                            <button matStepperNext type="button" class="btn btn-primary">Next</button>
+                        </div>
+                        <div class="g--margin-l-15">
+                            (Compruebe que esten todos los campos rellenados con: "*")
+                        </div>
+                    </div>
+                </mat-step>
+                <mat-step label="Finalizado">
+                    <div class="c-table g--padding-25">
+                        <p>Gracias por haber rellenado sus datos.</p>
+                        <div>
+                            <button type="button" class="btn btn-primary g--margin-r-15" matStepperPrevious>Back</button>
+                            <button class="btn btn-primary g--margin-r-15" (click)="stepper.reset()">Reset</button>
+                            <button class="btn btn-primary g--margin-r-15" (click)="recopilarDatos()">Enviar</button>
+                        </div>
+                    </div>
+                </mat-step>
+            </mat-horizontal-stepper>
+        </div>
+    </div>
+</div>

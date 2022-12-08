@@ -1,0 +1,378 @@
+{
+    "DiccionariosEnumerados": [
+        {
+            "Id": 1,
+            "NombreTipo": "Genero",
+            "TipoProducto": null,
+            "Opciones": [
+                {
+                    "Id": 1,
+                    "Nombre": "Hombre"
+                },
+                {
+                    "Id": 2,
+                    "Nombre": "Mujer"
+                }
+            ],
+            "SeleccionMultiple": false
+        },
+        {
+            "Id": 2,
+            "NombreTipo": "Alergias",
+            "TipoProducto": null,
+            "Opciones": [
+                {
+                    "Id": 3,
+                    "Nombre": "Nasal"
+                },
+                {
+                    "Id": 4,
+                    "Nombre": "Respiratoria"
+                },
+                {
+                    "Id": 5,
+                    "Nombre": "Alimentaria"
+                },
+                {
+                    "Id": 6,
+                    "Nombre": "Cutanea"
+                }
+            ],
+            "SeleccionMultiple": true
+        },
+        {
+            "Id": 3,
+            "NombreTipo": "NecesidadesMovilidad",
+            "TipoProducto": null,
+            "Opciones": [
+                {
+                    "Id": 7,
+                    "Nombre": "Movilidad silla ruedas"
+                },
+                {
+                    "Id": 8,
+                    "Nombre": "Movilidad ciegos"
+                },
+                {
+                    "Id": 9,
+                    "Nombre": "Otro"
+                }
+            ],
+            "SeleccionMultiple": true
+        },
+        {
+            "Id": 4,
+            "NombreTipo": "RegimenesHotel",
+            "TipoProducto": 1,
+            "Opciones": [
+                {
+                    "Id": 10,
+                    "Nombre": "Solo alojamiento"
+                },
+                {
+                    "Id": 11,
+                    "Nombre": "Alojamiento y desayuno"
+                },
+                {
+                    "Id": 12,
+                    "Nombre": "Pensión completa"
+                },
+                {
+                    "Id": 13,
+                    "Nombre": "Media pensión"
+                },
+                {
+                    "Id": 14,
+                    "Nombre": "Todo incluido"
+                }
+            ],
+            "SeleccionMultiple": false
+        },
+        {
+            "Id": 5,
+            "NombreTipo": "ImprescindiblesHotel",
+            "TipoProducto": 1,
+            "Opciones": [
+                {
+                    "Id": 15,
+                    "Nombre": "Piscina"
+                },
+                {
+                    "Id": 16,
+                    "Nombre": "Wifi"
+                },
+                {
+                    "Id": 17,
+                    "Nombre": "Caja fuerte"
+                },
+                {
+                    "Id": 18,
+                    "Nombre": "Sala de reuniones"
+                },
+                {
+                    "Id": 19,
+                    "Nombre": "Gimnasio"
+                },
+                {
+                    "Id": 20,
+                    "Nombre": "Restaurante"
+                }
+            ],
+            "SeleccionMultiple": true
+        },
+        {
+            "Id": 6,
+            "NombreTipo": "PreferenciaAsientosVuelo",
+            "TipoProducto": 2,
+            "Opciones": [
+                {
+                    "Id": 21,
+                    "Nombre": "Pasillo"
+                },
+                {
+                    "Id": 22,
+                    "Nombre": "Ventanilla"
+                },
+                {
+                    "Id": 23,
+                    "Nombre": "Salida de emergencia"
+                }
+            ],
+            "SeleccionMultiple": false
+        },
+        {
+            "Id": 7,
+            "NombreTipo": "PreferenciaAsientosTren",
+            "TipoProducto": 5,
+            "Opciones": [
+                {
+                    "Id": 24,
+                    "Nombre": "Pasillo"
+                },
+                {
+                    "Id": 25,
+                    "Nombre": "Ventanilla"
+                },
+                {
+                    "Id": 26,
+                    "Nombre": "En mesa"
+                }
+            ],
+            "SeleccionMultiple": false
+        },
+        {
+            "Id": 8,
+            "NombreTipo": "SentidoMarchaTren",
+            "TipoProducto": 5,
+            "Opciones": [
+                {
+                    "Id": 27,
+                    "Nombre": "A favor"
+                },
+                {
+                    "Id": 28,
+                    "Nombre": "En contra"
+                }
+            ],
+            "SeleccionMultiple": false
+        },
+        {
+            "Id": 9,
+            "NombreTipo": "OpcionesAlimentacion",
+            "TipoProducto": null,
+            "Opciones": [
+                {
+                    "Id": 29,
+                    "Nombre": "Vegetariano"
+                },
+                {
+                    "Id": 30,
+                    "Nombre": "Vegano"
+                },
+                {
+                    "Id": 31,
+                    "Nombre": "Libre de gluten"
+                },
+                {
+                    "Id": 32,
+                    "Nombre": "Intolerante a la lactosa"
+                },
+                {
+                    "Id": 33,
+                    "Nombre": "Diabeticos"
+                },
+                {
+                    "Id": 34,
+                    "Nombre": "Kosher"
+                },
+                {
+                    "Id": 35,
+                    "Nombre": "Indiferente"
+                },
+                {
+                    "Id": 36,
+                    "Nombre": "Otros"
+                }
+            ],
+            "SeleccionMultiple": true
+        },
+        {
+            "Id": 10,
+            "NombreTipo": "OpcionesAlimentacionVuelo",
+            "TipoProducto": 2,
+            "Opciones": [
+                {
+                    "Id": 37,
+                    "Nombre": "Comida vegetariana Hindu"
+                },
+                {
+                    "Id": 38,
+                    "Nombre": "Comida para bebes"
+                },
+                {
+                    "Id": 39,
+                    "Nombre": "Comida blanda"
+                },
+                {
+                    "Id": 40,
+                    "Nombre": "Comida para niños"
+                },
+                {
+                    "Id": 41,
+                    "Nombre": "Harina de pollo"
+                },
+                {
+                    "Id": 42,
+                    "Nombre": "Comida para diabeticos"
+                },
+                {
+                    "Id": 43,
+                    "Nombre": "Plato de frutas"
+                },
+                {
+                    "Id": 44,
+                    "Nombre": "Harina de pescado"
+                },
+                {
+                    "Id": 45,
+                    "Nombre": "Comida intolerante al gluten"
+                },
+                {
+                    "Id": 46,
+                    "Nombre": "Comida vegetariana india"
+                },
+                {
+                    "Id": 48,
+                    "Nombre": "Comida Kosher"
+                },
+                {
+                    "Id": 49,
+                    "Nombre": "Comida baja en calorias"
+                },
+                {
+                    "Id": 50,
+                    "Nombre": "Comida baja en grasa"
+                },
+                {
+                    "Id": 51,
+                    "Nombre": "Harina baja en sal"
+                },
+                {
+                    "Id": 52,
+                    "Nombre": "Comida musulmana"
+                },
+                {
+                    "Id": 53,
+                    "Nombre": "Comida baja en lactosa"
+                },
+                {
+                    "Id": 54,
+                    "Nombre": "Comida cruda vegetariana"
+                },
+                {
+                    "Id": 55,
+                    "Nombre": "Comida de mariscos"
+                },
+                {
+                    "Id": 56,
+                    "Nombre": "Comida vegana vegetariana"
+                },
+                {
+                    "Id": 57,
+                    "Nombre": "Comida vegetariana jainista"
+                },
+                {
+                    "Id": 58,
+                    "Nombre": "Comida oriental vegetariana"
+                },
+                {
+                    "Id": 59,
+                    "Nombre": "Comida vegetariana lacto-ovo"
+                }
+            ],
+            "SeleccionMultiple": true
+        }
+    ],
+    "Ramas": [
+        {
+            "Grupo": {
+                "Id": 29485,
+                "Nombre": "Grupo 1"
+            },
+            "Sociedad": {
+                "Id": 234,
+                "Nombre": "Sociedad 1"
+            },
+            "Departamento": null
+        },
+        {
+            "Grupo": {
+                "Id": 29485,
+                "Nombre": "Grupo 1"
+            },
+            "Sociedad": {
+                "Id": 476,
+                "Nombre": "Sociedad 2"
+            },
+            "Departamento": null
+        },
+        {
+            "Grupo": {
+                "Id": 26697,
+                "Nombre": "Grupo 2"
+            },
+            "Sociedad": {
+                "Id": 26274,
+                "Nombre": "Sociedad 3"
+            },
+            "Departamento": {
+                "Id": 26842,
+                "Nombre": "Departamento 1"
+            }
+        },
+        {
+            "Grupo": {
+                "Id": 29485,
+                "Nombre": "Grupo 1"
+            },
+            "Sociedad": {
+                "Id": 476,
+                "Nombre": "Sociedad 2"
+            },
+            "Departamento": {
+                "Id": 28030,
+                "Nombre": "Departamento 2"
+            }
+        }
+    ],
+    "Nombre": "",
+    "Apellidos": "",
+    "Prefijo": 34,
+    "Telefono": 0,
+    "Email": "",
+    "Residente": {
+        "EsResidente": true,
+        "Localidad": ""
+    },
+    "Puede_Saltarse_las_reglas": false
+}

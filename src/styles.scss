@@ -1,0 +1,241 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.l-flex {
+  display: flex;
+
+  &--direction-column {
+    flex-direction: column;
+  }
+
+  &--center {
+    justify-content: center;
+  }
+
+  &--end {
+    justify-content: end;
+
+  }
+
+  &--initial {
+    justify-content: initial;
+  }
+
+  &--space-around {
+    justify-content: space-around;
+
+  }
+
+
+  &--space-evenly {
+    justify-content: space-evenly;
+  }
+
+  &--space-between {
+    justify-content: space-between;
+  }
+
+  &__aling-items {
+    &--center {
+      align-items: center;
+
+    }
+
+    &--flex-start {
+      align-items: flex-start;
+    }
+  }
+
+  &--direction-row {
+    flex-direction: row
+  }
+
+  &--wrap {
+    flex-wrap: wrap
+  }
+}
+
+.c-column {
+  padding: 10px;
+  float: left;
+  width: 45%;
+  text-align: justify
+}
+
+.btn {
+  &--100 {
+    width: 100px
+  }
+
+  &--152 {
+    width: 152px;
+  }
+
+  &--200 {
+    width: 200px;
+  }
+}
+
+.g {
+  &--margin {
+    &-r {
+      &-15 {
+        margin-right: 15px;
+      }
+      &-30 {
+        margin-right: 30px;
+      }
+    }
+
+    &-t {
+      &-15 {
+        margin-top: 15px;
+      }
+
+      &-30 {
+        margin-top: 30px;
+      }
+    }
+
+    &-l {
+      &-15 {
+        margin-left: 15px;
+      }
+
+      &-30 {
+        margin-left: 30px;
+      }
+    }
+  }
+
+  &--padding {
+    &-r {
+      &-25 {
+        padding-right: 25px;
+      }
+    }
+
+    &-t {
+      &-45 {
+        padding-top: 45px;
+      }
+    }
+    
+    &-b {
+      &-45 {
+        padding-bottom: 45px;
+      }
+    }
+    &-45{
+      padding: 45px;
+    }
+    &-30{
+      padding: 30px 30px 0px 30px ;
+    }
+    &-25{
+      padding: 25px ;
+    }
+  }
+
+  &--back-gradient {
+    background: linear-gradient(90deg, #0073BD, #65A8FB);
+    width: 156px;
+    margin-left: 0;
+    margin-bottom: 24px;
+  }
+
+  &--redondeado {
+    border-radius: 6px;
+  }
+
+  &--width {
+    &-300-px {
+      width: 300px;
+    }
+
+    &-100 {
+      width: 100%
+    }
+    &-50{
+      width: 50%;
+    }
+  }
+
+}
+
+hr {
+  display: block;
+  height: 3px;
+  border: 0;
+}
+.c-table{
+  background-color: #FFFFFF;
+    margin: 12px;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 25%);
+    border-radius: 6px;
+}
+.celda-container {
+  width: 100%;
+  justify-content: center;
+
+  &__cursor-pointer {
+    cursor: pointer;
+    font-size: 40px;
+    width:50px
+  }
+
+
+  &__icono-borrar {
+    color: #e21313;
+  }
+}
+body {
+  background-size: cover;
+  background-position: fixed;
+  background-repeat: none;
+}
+
+.l-page__body {
+  padding: 40px;
+}
+
+.l-page {
+  padding: 50px 60px 50px 60px
+}
+
+.c-section {
+  margin: 30px;
+}
+
+.img--header {
+  width: 526px;
+  height: 124.062px;
+  margin-top: 96px;
+  margin-bottom: 96px;
+}
+
+.p-multiselect {
+  width: 300px
+}
+
+$palette: (
+  "principal":(#011419, #013041, #014B6B, #006094, #0073BD, #0082E6, #108FFE, #3B98FC, #65A8FB,#8DB9FC, #B4CFFD, #D7E3FE),
+  "alternative":(#320A01, #691A02, #A62E03, #DE4802, #FD6B1C, #FD9753, #FDC090, #FEE2C8, #FFFFFF),
+  "black":(rgb(0, 0, 0, 0.605)),
+  "red": (#190501, #400E07, #621A13, #832421, #A52C2C, #CC3B33, #DC5C50, #EE7E6D, #FC9F8D),
+  "grey": (#0D0D0D, #292929, #474747, #636363, #5E5E5E, #808080, #9C9C9C, #BABABA, #D6D6D6, #F2F2F2),
+  "green": (#021901, #0A470A, #1C731F, #2F9838, #40BF4F, #67D078, #90E4A1, #B8F5C7, #E6FEED),
+  "white":(#B9CAFD, #CCD4F5, #D9DDF2, #E0E2F1, #E7E8F3, #EEEEF7, #F4F4FB, #E0E0E0, #F7F6FD)
+);
+
+@each $color in map-keys($palette) {
+  $rango-color: map-get($palette, $color);
+
+  @for $index-color from 0 to length($rango-color) {
+    .g--background-color-#{$color}-#{$index-color+1} {
+      background-color: nth($rango-color, $index-color+1);
+    }
+  }
+}
+
+;

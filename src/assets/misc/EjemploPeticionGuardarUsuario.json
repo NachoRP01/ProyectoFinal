@@ -1,0 +1,94 @@
+{
+  "IdCorporativo": "2847",
+  "RefDepartamento": "Tecnicos",
+  "RefUsuario": "Supervisor",
+  "Nombre": "HECTOR",
+  "Apellidos": "SALAZAR CARRERA",
+  "FechaNacimiento": "",
+  "Genero": ";",
+  "PreFijo": "34",
+  "Telefono": "685729081",
+  "Newsletter": true,
+  "Residente": {
+    "EsResidente": false,
+    "Localidad": ""
+  },
+  "Documento": [
+    {
+      "Extranjero": false,
+      "TipoDocumento": 0,
+      "NumDocumento": "19127996T",
+      "PaisExpedicion": "ES",
+      "FechaExpedicion": "2022-10-31T17:01:19",
+      "FechaCaducidad": "2022-10-31T17:01:19"
+    }
+  ],
+  "TarjetasFidelizacion": [
+    {
+      "Producto": 1,
+      "Compañia": "",
+      "Numeracion": "",
+      "FechaCaducidad": "2022-10-31T17:01:19",
+      "Adjunto": ""
+    }
+  ],
+  "Descuentos": [
+    {
+      "Tipo": 0,
+      "Numeracion": "12345678"
+    }
+  ],
+  "Perfil": {
+    "Fumador": false,
+    "Alergias": {
+      "TieneAlergias": true,
+      "ListaAlergias": [
+        1,
+        3
+      ],
+      "Observaciones": ""
+    },
+    "OpcionesAlimentacion": [
+      3,
+      6
+    ],
+    "OpcionesAlimentacionAvion": [
+      2,
+      8
+    ],
+    "NecesidadesMovilidad": {
+      "TieneNecesidadesMovilidad": true,
+      "TiposNecesidadesMovilidad": [
+        0
+      ],
+      "Observaciones": ""
+    }
+  },
+  "PreferenciasHotel": {
+    "RegimenPreferente": 3,
+    "Imprescindibles": [
+      0,
+      3
+    ],
+    "CheckIn": "",
+    "CadenasHotelesPreferentes": "",
+    "Observaciones": ""
+  },
+  "PreferenciasVuelo": {
+    "ClaseHabitual": "",
+    "PreferenciasAsiento": 1,
+    "CompañiasAereasPreferentes": "",
+    "Observaciones": ""
+  },
+  "PreferenciasTren": {
+    "PreferenciasAsiento": 1,
+    "SentidoMarcha": 0,
+    "NumeroVagon": "",
+    "Observaciones": ""
+  },
+  "PreferenciasRentACar": {
+    "CategoriaVehiculo": "",
+    "CompañiaFrecuente": "",
+    "Observaciones": ""
+  }
+}
