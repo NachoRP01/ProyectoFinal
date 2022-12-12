@@ -5,17 +5,12 @@ import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
   {
     path: 'formulario',
     component: FormularioComponent
-  },
-  {
-    path: 'login',
-    component: LoginComponent
   },
   {
     path: 'sign-in',

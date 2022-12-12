@@ -21,19 +21,23 @@
     justify-content: initial;
   }
 
-  &--space-around {
-    justify-content: space-around;
+  &--space {
 
+    &-around {
+      justify-content: space-around;
+    }
+
+    &-evenly {
+      justify-content: space-evenly;
+    }
+
+    &-between {
+      justify-content: space-between;
+    }
   }
 
+  
 
-  &--space-evenly {
-    justify-content: space-evenly;
-  }
-
-  &--space-between {
-    justify-content: space-between;
-  }
 
   &__aling-items {
     &--center {
@@ -82,6 +86,7 @@
       &-15 {
         margin-right: 15px;
       }
+
       &-30 {
         margin-right: 30px;
       }
@@ -120,20 +125,23 @@
         padding-top: 45px;
       }
     }
-    
+
     &-b {
       &-45 {
         padding-bottom: 45px;
       }
     }
-    &-45{
+
+    &-45 {
       padding: 45px;
     }
-    &-30{
-      padding: 30px 30px 0px 30px ;
+
+    &-30 {
+      padding: 30px 30px 0px 30px;
     }
-    &-25{
-      padding: 25px ;
+
+    &-25 {
+      padding: 25px;
     }
   }
 
@@ -152,11 +160,18 @@
     &-300-px {
       width: 300px;
     }
+    &-1000-px{
 
+    }
+&-250-px{
+  width: 250px;
+
+}
     &-100 {
       width: 100%
     }
-    &-50{
+
+    &-50 {
       width: 50%;
     }
   }
@@ -168,12 +183,14 @@ hr {
   height: 3px;
   border: 0;
 }
-.c-table{
+
+.c-table {
   background-color: #FFFFFF;
-    margin: 12px;
-    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 25%);
-    border-radius: 6px;
+  margin: 12px;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 25%);
+  border-radius: 6px;
 }
+
 .celda-container {
   width: 100%;
   justify-content: center;
@@ -181,7 +198,7 @@ hr {
   &__cursor-pointer {
     cursor: pointer;
     font-size: 40px;
-    width:50px
+    width: 50px
   }
 
 
@@ -189,6 +206,7 @@ hr {
     color: #e21313;
   }
 }
+
 body {
   background-size: cover;
   background-position: fixed;
@@ -219,7 +237,7 @@ body {
 }
 
 $palette: (
-  "principal":(#011419, #013041, #014B6B, #006094, #0073BD, #0082E6, #108FFE, #3B98FC, #65A8FB,#8DB9FC, #B4CFFD, #D7E3FE),
+  "principal":(#011419, #013041, #014B6B, #006094, #0073BD, #0082E6, #108FFE, #3B98FC, #65A8FB, #8DB9FC, #B4CFFD, #D7E3FE),
   "alternative":(#320A01, #691A02, #A62E03, #DE4802, #FD6B1C, #FD9753, #FDC090, #FEE2C8, #FFFFFF),
   "black":(rgb(0, 0, 0, 0.605)),
   "red": (#190501, #400E07, #621A13, #832421, #A52C2C, #CC3B33, #DC5C50, #EE7E6D, #FC9F8D),
@@ -236,16 +254,26 @@ $palette: (
       background-color: nth($rango-color, $index-color+1);
     }
   }
-};
+}
+
+;
+
 @each $color in map-keys($palette) {
   $rango-color: map-get($palette, $color);
 
   @for $index-color from 0 to length($rango-color) {
     .g--color-#{$color}-#{$index-color+1} {
-     color: nth($rango-color, $index-color+1);
+      color: nth($rango-color, $index-color+1);
     }
   }
-};
+}
+
+.min-width{
+  min-width: 762px;
+}
+.max-width{
+  max-width: 1200px;
+}
 .c-button {
   cursor: pointer;
   border: 1px solid #0082E6;
@@ -253,33 +281,36 @@ $palette: (
 
   background-color: #0082E6;
   color: white;
-  padding:14px;
-  width: 100% ;
+  padding: 14px;
+  width: 100%;
+
   &--secudary {
-      background-color: white;
-      color: #0082E6;
+    background-color: white;
+    color: #0082E6;
   }
 
   &--tertiary {
-      background-color: transparent;
-      color: #FD6B1C;
-      border: none;
+    background-color: transparent;
+    color: #FD6B1C;
+    border: none;
   }
-  &--tertiary-alt{
-      background-color: transparent;
-      color:#FD6B1C;
-      border: none;
+
+  &--tertiary-alt {
+    background-color: transparent;
+    color: #FD6B1C;
+    border: none;
   }
 
   &--alternative {
-      margin-left: 0px;
-      background-color: #FD6B1C;
-      border-color: #FD6B1C;
-      color: white;
+    margin-left: 0px;
+    background-color: #FD6B1C;
+    border-color: #FD6B1C;
+    color: white;
   }
-  &--dangerous{
-      background-color: #c53030;
-      border-color: #c53030;
-      color: white;
+
+  &--dangerous {
+    background-color: #c53030;
+    border-color: #c53030;
+    color: white;
   }
 }

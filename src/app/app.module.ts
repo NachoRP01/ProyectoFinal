@@ -4,7 +4,6 @@ import { BrowserModule } from "@angular/platform-browser";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { FormularioComponent } from "./formulario/formulario.component";
-import { LoginComponent } from "./login/login.component";
 import { CheckboxModule } from 'primeng/checkbox';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { StepsModule } from 'primeng/steps';
@@ -24,10 +23,8 @@ import { HomeComponent } from './home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     FormularioComponent,
-    HomeComponent, 
-
+    HomeComponent
   ],
   imports: [
     BrowserModule,
